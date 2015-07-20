@@ -2961,3 +2961,204 @@ Started GET "/assets/admin/img/bg.png" for 127.0.0.1 at 2015-07-21 02:41:33 +080
 
 
 Started GET "//assets/admin/img/no_image.jpg" for 127.0.0.1 at 2015-07-21 02:41:35 +0800
+  [1m[36mSite Load (2.0ms)[0m  [1mSELECT "term_taxonomy".* FROM "term_taxonomy" WHERE "term_taxonomy"."taxonomy" = 'site'  ORDER BY "term_taxonomy"."term_group" DESC[0m
+  [1m[35m (2.0ms)[0m  SELECT COUNT(*) FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?  [["objectId", 1], ["object_class", "Site"]]
+  [1m[36mMeta Load (2.9ms)[0m  [1mSELECT "metas".* FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?[0m  [["objectId", 1], ["object_class", "Site"]]
+  [1m[35mTheme Load (2.0ms)[0m  SELECT  "term_taxonomy".* FROM "term_taxonomy" WHERE "term_taxonomy"."taxonomy" = 'theme' AND "term_taxonomy"."parent_id" = ? AND "term_taxonomy"."slug" = ?  ORDER BY "term_taxonomy"."id" ASC LIMIT 1  [["parent_id", 1], ["slug", "camaleon_first"]]
+  [1m[36m (2.0ms)[0m  [1mSELECT "term_taxonomy"."slug" FROM "term_taxonomy" WHERE "term_taxonomy"."taxonomy" = 'plugin' AND "term_taxonomy"."parent_id" = ? AND "term_taxonomy"."term_group" = ?[0m  [["parent_id", 1], ["term_group", 1]]
+  [1m[35mSQL (2.9ms)[0m  SELECT "term_taxonomy"."id" AS t0_r0, "term_taxonomy"."taxonomy" AS t0_r1, "term_taxonomy"."description" AS t0_r2, "term_taxonomy"."parent_id" AS t0_r3, "term_taxonomy"."count" AS t0_r4, "term_taxonomy"."name" AS t0_r5, "term_taxonomy"."slug" AS t0_r6, "term_taxonomy"."term_group" AS t0_r7, "term_taxonomy"."term_order" AS t0_r8, "term_taxonomy"."status" AS t0_r9, "term_taxonomy"."created_at" AS t0_r10, "term_taxonomy"."updated_at" AS t0_r11, "term_taxonomy"."user_id" AS t0_r12, "metas"."id" AS t1_r0, "metas"."key" AS t1_r1, "metas"."value" AS t1_r2, "metas"."objectId" AS t1_r3, "metas"."object_class" AS t1_r4 FROM "term_taxonomy" LEFT OUTER JOIN "metas" ON "metas"."objectId" = "term_taxonomy"."id" AND "metas"."object_class" = ? WHERE "term_taxonomy"."taxonomy" = 'site'  ORDER BY "term_taxonomy"."term_group" DESC  [["object_class", "Site"]]
+  [1m[36m (2.0ms)[0m  [1mSELECT "term_taxonomy"."slug" FROM "term_taxonomy" WHERE "term_taxonomy"."taxonomy" = 'plugin' AND "term_taxonomy"."parent_id" = ? AND "term_taxonomy"."term_group" = ?[0m  [["parent_id", 1], ["term_group", 1]]
+  [1m[35m (2.0ms)[0m  SELECT COUNT(*) FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?  [["objectId", 1], ["object_class", "Site"]]
+  [1m[36mMeta Load (2.0ms)[0m  [1mSELECT "metas".* FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?[0m  [["objectId", 1], ["object_class", "Site"]]
+  [1m[35mMeta Load (1.0ms)[0m  SELECT  "metas".* FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ? AND "metas"."key" = ?  ORDER BY "metas"."id" ASC LIMIT 1  [["objectId", 1], ["object_class", "Site"], ["key", "languages_site"]]
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-21 03:19:09 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FrontendController#index as HTML
+  [1m[35mSite Load (2.0ms)[0m  SELECT  "term_taxonomy".* FROM "term_taxonomy" WHERE "term_taxonomy"."taxonomy" = 'site'  ORDER BY "term_taxonomy"."term_group" DESC LIMIT 1
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."site_id" = ? AND "users"."auth_token" = ?  ORDER BY users.role ASC LIMIT 1[0m  [["site_id", -1], ["auth_token", "mhj91ZdIfxuqpKu7p7MNxA"]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?  [["objectId", 1], ["object_class", "Site"]]
+  [1m[36mMeta Load (2.0ms)[0m  [1mSELECT "metas".* FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?[0m  [["objectId", 1], ["object_class", "Site"]]
+  [1m[35mMeta Load (2.0ms)[0m  SELECT  "metas".* FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ? AND "metas"."key" = ?  ORDER BY "metas"."id" ASC LIMIT 1  [["objectId", 1], ["object_class", "Site"], ["key", "languages_site"]]
+  [1m[36mTheme Load (2.0ms)[0m  [1mSELECT  "term_taxonomy".* FROM "term_taxonomy" WHERE "term_taxonomy"."taxonomy" = 'theme' AND "term_taxonomy"."parent_id" = ? AND "term_taxonomy"."slug" = ?  ORDER BY "term_taxonomy"."id" ASC LIMIT 1[0m  [["parent_id", 1], ["slug", "camaleon_first"]]
+  [1m[35m (1.0ms)[0m  SELECT "custom_fields_relationships"."value" FROM "custom_fields_relationships" WHERE "custom_fields_relationships"."objectId" = ? AND "custom_fields_relationships"."object_class" = ? AND "custom_fields_relationships"."custom_field_slug" = ?  ORDER BY custom_fields_relationships.term_order ASC  [["objectId", 17], ["object_class", "Theme"], ["custom_field_slug", "home_page"]]
+  [1m[36m (1.0ms)[0m  [1mSELECT "term_taxonomy"."id" FROM "term_taxonomy" WHERE "term_taxonomy"."taxonomy" = 'post_type' AND "term_taxonomy"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[35mPost Load (2.0ms)[0m  SELECT  "posts".* FROM "posts" INNER JOIN "term_relationships" ON "term_relationships"."objectId" = "posts"."id" INNER JOIN "term_taxonomy" ON "term_taxonomy"."id" = "term_relationships"."term_taxonomy_id" AND "term_taxonomy"."taxonomy" = 'post_type' WHERE "posts"."post_class" = ? AND "term_taxonomy"."id" IN (2, 7, 19) AND (term_taxonomy.slug = 'page') AND "posts"."status" = ?  ORDER BY term_relationships.term_order asc, posts.id DESC LIMIT 1  [["post_class", "Post"], ["status", "published"]]
+  [1m[36m (1.0ms)[0m  [1mSELECT "custom_fields_relationships"."value" FROM "custom_fields_relationships" WHERE "custom_fields_relationships"."objectId" = ? AND "custom_fields_relationships"."object_class" = ? AND "custom_fields_relationships"."custom_field_slug" = ?  ORDER BY custom_fields_relationships.term_order ASC[0m  [["objectId", 17], ["object_class", "Theme"], ["custom_field_slug", "recent_post_type"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "term_taxonomy"."id" FROM "term_taxonomy" WHERE "term_taxonomy"."taxonomy" = 'post_type' AND "term_taxonomy"."parent_id" = ?  [["parent_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT "custom_fields_relationships"."value" FROM "custom_fields_relationships" WHERE "custom_fields_relationships"."objectId" = ? AND "custom_fields_relationships"."object_class" = ? AND "custom_fields_relationships"."custom_field_slug" = ?  ORDER BY custom_fields_relationships.term_order ASC[0m  [["objectId", 17], ["object_class", "Theme"], ["custom_field_slug", "home_qty"]]
+  [1m[35mPost Load (2.9ms)[0m  SELECT  "posts".* FROM "posts" INNER JOIN "term_relationships" ON "term_relationships"."objectId" = "posts"."id" INNER JOIN "term_taxonomy" ON "term_taxonomy"."id" = "term_relationships"."term_taxonomy_id" AND "term_taxonomy"."taxonomy" = 'post_type' WHERE "posts"."post_class" = ? AND "term_taxonomy"."id" IN (2, 7, 19) AND "posts"."status" = ?  ORDER BY "posts"."created_at" DESC LIMIT 6  [["post_class", "Post"], ["status", "published"]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?[0m  [["objectId", 2], ["object_class", "Post"]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?  [["objectId", 1], ["object_class", "Post"]]
+  Rendered app/apps/themes/camaleon_first/views/index.html.erb within layouts/index (594.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "term_taxonomy".* FROM "term_taxonomy" WHERE "term_taxonomy"."taxonomy" = 'site'  ORDER BY "term_taxonomy"."term_group" DESC LIMIT 1[0m
+  [1m[35mNavMenu Load (2.9ms)[0m  SELECT  "term_taxonomy".* FROM "term_taxonomy" WHERE "term_taxonomy"."taxonomy" = 'nav_menu' AND "term_taxonomy"."parent_id" = ? AND (term_taxonomy.slug = 'main_menu' OR term_taxonomy.slug LIKE '%-->main_menu<!--%' ) LIMIT 1  [["parent_id", 1]]
+  [1m[36mSQL (2.9ms)[0m  [1mSELECT "term_taxonomy"."id" AS t0_r0, "term_taxonomy"."taxonomy" AS t0_r1, "term_taxonomy"."description" AS t0_r2, "term_taxonomy"."parent_id" AS t0_r3, "term_taxonomy"."count" AS t0_r4, "term_taxonomy"."name" AS t0_r5, "term_taxonomy"."slug" AS t0_r6, "term_taxonomy"."term_group" AS t0_r7, "term_taxonomy"."term_order" AS t0_r8, "term_taxonomy"."status" AS t0_r9, "term_taxonomy"."created_at" AS t0_r10, "term_taxonomy"."updated_at" AS t0_r11, "term_taxonomy"."user_id" AS t0_r12, "metas"."id" AS t1_r0, "metas"."key" AS t1_r1, "metas"."value" AS t1_r2, "metas"."objectId" AS t1_r3, "metas"."object_class" AS t1_r4 FROM "term_taxonomy" LEFT OUTER JOIN "metas" ON "metas"."objectId" = "term_taxonomy"."id" AND "metas"."object_class" = ? WHERE "term_taxonomy"."taxonomy" = 'nav_menu_item' AND "term_taxonomy"."parent_id" = ?[0m  [["object_class", "NavMenuItem"], ["parent_id", 9]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?  [["objectId", 10], ["object_class", "NavMenuItem"]]
+  [1m[36mMeta Load (1.0ms)[0m  [1mSELECT "metas".* FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?[0m  [["objectId", 10], ["object_class", "NavMenuItem"]]
+  [1m[35mPost Load (2.9ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."post_class" = ? AND "posts"."id" = ? LIMIT 1  [["post_class", "Post"], ["id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "term_taxonomy" WHERE "term_taxonomy"."taxonomy" = 'nav_menu_item' AND "term_taxonomy"."parent_id" = ?[0m  [["parent_id", 10]]
+  [1m[35m (2.0ms)[0m  SELECT COUNT(*) FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?  [["objectId", 11], ["object_class", "NavMenuItem"]]
+  [1m[36mMeta Load (1.0ms)[0m  [1mSELECT "metas".* FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?[0m  [["objectId", 11], ["object_class", "NavMenuItem"]]
+  [1m[35mPost Load (1.0ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."post_class" = ? AND "posts"."id" = ? LIMIT 1  [["post_class", "Post"], ["id", 2]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "term_taxonomy" WHERE "term_taxonomy"."taxonomy" = 'nav_menu_item' AND "term_taxonomy"."parent_id" = ?[0m  [["parent_id", 11]]
+  [1m[35m (1.0ms)[0m  SELECT "custom_fields_relationships"."value" FROM "custom_fields_relationships" WHERE "custom_fields_relationships"."objectId" = ? AND "custom_fields_relationships"."object_class" = ? AND "custom_fields_relationships"."custom_field_slug" = ?  ORDER BY custom_fields_relationships.term_order ASC  [["objectId", 17], ["object_class", "Theme"], ["custom_field_slug", "footer_left"]]
+  [1m[36m (1.0ms)[0m  [1mSELECT "custom_fields_relationships"."value" FROM "custom_fields_relationships" WHERE "custom_fields_relationships"."objectId" = ? AND "custom_fields_relationships"."object_class" = ? AND "custom_fields_relationships"."custom_field_slug" = ?  ORDER BY custom_fields_relationships.term_order ASC[0m  [["objectId", 17], ["object_class", "Theme"], ["custom_field_slug", "footer_center"]]
+  [1m[35m (1.0ms)[0m  SELECT "custom_fields_relationships"."value" FROM "custom_fields_relationships" WHERE "custom_fields_relationships"."objectId" = ? AND "custom_fields_relationships"."object_class" = ? AND "custom_fields_relationships"."custom_field_slug" = ?  ORDER BY custom_fields_relationships.term_order ASC  [["objectId", 17], ["object_class", "Theme"], ["custom_field_slug", "footer_right"]]
+Completed 200 OK in 3028ms (Views: 1089.8ms | ActiveRecord: 48.8ms)
+
+
+Started GET "/assets/themes/camaleon_first/assets/css/main" for 127.0.0.1 at 2015-07-21 03:19:14 +0800
+
+
+Started GET "/assets/themes/camaleon_first/assets/js/main.js" for 127.0.0.1 at 2015-07-21 03:19:16 +0800
+
+
+Started GET "/assets/plugins/contact_form/assets/css/front/railsform.scss" for 127.0.0.1 at 2015-07-21 03:19:18 +0800
+
+
+Started GET "/assets/themes/camaleon_first/assets/images/loader.gif" for 127.0.0.1 at 2015-07-21 03:19:21 +0800
+
+
+Started GET "/assets/themes/camaleon_first/assets/images/zoom.png" for 127.0.0.1 at 2015-07-21 03:19:22 +0800
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-07-21 03:19:31 +0800
+Processing by AdminController#dashboard as HTML
+  [1m[36mSite Load (2.9ms)[0m  [1mSELECT  "term_taxonomy".* FROM "term_taxonomy" WHERE "term_taxonomy"."taxonomy" = 'site'  ORDER BY "term_taxonomy"."term_group" DESC LIMIT 1[0m
+  [1m[35m (2.0ms)[0m  SELECT COUNT(*) FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?  [["objectId", 1], ["object_class", "Site"]]
+  [1m[36mMeta Load (2.0ms)[0m  [1mSELECT "metas".* FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?[0m  [["objectId", 1], ["object_class", "Site"]]
+  [1m[35mTheme Load (1.0ms)[0m  SELECT  "term_taxonomy".* FROM "term_taxonomy" WHERE "term_taxonomy"."taxonomy" = 'theme' AND "term_taxonomy"."parent_id" = ? AND "term_taxonomy"."slug" = ?  ORDER BY "term_taxonomy"."id" ASC LIMIT 1  [["parent_id", 1], ["slug", "camaleon_first"]]
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."site_id" = ? AND "users"."auth_token" = ?  ORDER BY users.role ASC LIMIT 1[0m  [["site_id", -1], ["auth_token", "mhj91ZdIfxuqpKu7p7MNxA"]]
+  [1m[35mSQL (2.9ms)[0m  SELECT "term_taxonomy"."id" AS t0_r0, "term_taxonomy"."taxonomy" AS t0_r1, "term_taxonomy"."description" AS t0_r2, "term_taxonomy"."parent_id" AS t0_r3, "term_taxonomy"."count" AS t0_r4, "term_taxonomy"."name" AS t0_r5, "term_taxonomy"."slug" AS t0_r6, "term_taxonomy"."term_group" AS t0_r7, "term_taxonomy"."term_order" AS t0_r8, "term_taxonomy"."status" AS t0_r9, "term_taxonomy"."created_at" AS t0_r10, "term_taxonomy"."updated_at" AS t0_r11, "term_taxonomy"."user_id" AS t0_r12, "metas"."id" AS t1_r0, "metas"."key" AS t1_r1, "metas"."value" AS t1_r2, "metas"."objectId" AS t1_r3, "metas"."object_class" AS t1_r4 FROM "term_taxonomy" LEFT OUTER JOIN "metas" ON "metas"."objectId" = "term_taxonomy"."id" AND "metas"."object_class" = ? WHERE "term_taxonomy"."taxonomy" = 'post_type' AND "term_taxonomy"."parent_id" = ? AND "term_taxonomy"."term_group" IS NULL  [["object_class", "PostType"], ["parent_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?[0m  [["objectId", 2], ["object_class", "PostType"]]
+  [1m[35mMeta Load (1.0ms)[0m  SELECT "metas".* FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?  [["objectId", 2], ["object_class", "PostType"]]
+  [1m[36mMeta Load (1.0ms)[0m  [1mSELECT  "metas".* FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ? AND "metas"."key" = ?  ORDER BY "metas"."id" ASC LIMIT 1[0m  [["objectId", 1], ["object_class", "Site"], ["key", "languages_site"]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?  [["objectId", 7], ["object_class", "PostType"]]
+  [1m[36mMeta Load (1.0ms)[0m  [1mSELECT "metas".* FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?[0m  [["objectId", 7], ["object_class", "PostType"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "term_taxonomy".* FROM "term_taxonomy" WHERE "term_taxonomy"."taxonomy" = 'site'  ORDER BY "term_taxonomy"."term_group" DESC LIMIT 1
+  [1m[36mPostType Load (2.0ms)[0m  [1mSELECT  "term_taxonomy".* FROM "term_taxonomy" WHERE "term_taxonomy"."taxonomy" = 'post_type' AND "term_taxonomy"."parent_id" = ? AND "term_taxonomy"."term_group" = ? AND "term_taxonomy"."slug" = ?  ORDER BY "term_taxonomy"."id" ASC LIMIT 1[0m  [["parent_id", 1], ["term_group", -1], ["slug", "commerce"]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?  [["objectId", 19], ["object_class", "PostType"]]
+  [1m[36mMeta Load (1.0ms)[0m  [1mSELECT "metas".* FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?[0m  [["objectId", 19], ["object_class", "PostType"]]
+  [1m[35m (2.0ms)[0m  SELECT COUNT(*) FROM "term_taxonomy" WHERE "term_taxonomy"."taxonomy" = 'ecommerce_order' AND "term_taxonomy"."parent_id" = ?  [["parent_id", 1]]
+  [1m[36mMeta Load (1.0ms)[0m  [1mSELECT  "metas".* FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ? AND "metas"."key" = ?  ORDER BY "metas"."id" ASC LIMIT 1[0m  [["objectId", 1], ["object_class", "Site"], ["key", "_default"]]
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?  [["objectId", 1], ["object_class", "Site"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "metas".* FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?[0m  [["objectId", 1], ["object_class", "Site"]]
+  [1m[35mMeta Load (1.0ms)[0m  SELECT  "metas".* FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ? AND "metas"."key" = ?  ORDER BY "metas"."id" ASC LIMIT 1  [["objectId", 1], ["object_class", "Site"], ["key", "date_notified_message"]]
+  Rendered admin/dashboard/index.html.erb within layouts/admin (104.5ms)
+  [1m[36mMeta Load (10.7ms)[0m  [1mSELECT  "metas".* FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ? AND "metas"."key" = ?  ORDER BY "metas"."id" ASC LIMIT 1[0m  [["objectId", 1], ["object_class", "Site"], ["key", "date_notified_message"]]
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (2.9ms)[0m  SELECT COUNT(*) FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?  [["objectId", 1], ["object_class", "Site"]]
+  [1m[36mMeta Load (2.9ms)[0m  [1mSELECT "metas".* FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?[0m  [["objectId", 1], ["object_class", "Site"]]
+  [1m[35m (2.0ms)[0m  SELECT COUNT(*) FROM "metas" WHERE "metas"."objectId" = ? AND "metas"."object_class" = ?  [["objectId", 1], ["object_class", "User"]]
+  Rendered layouts/admin/_sidebar.html.erb (49.8ms)
+  [1m[36mSQL (2.0ms)[0m  [1mSELECT "term_taxonomy"."id" AS t0_r0, "term_taxonomy"."taxonomy" AS t0_r1, "term_taxonomy"."description" AS t0_r2, "term_taxonomy"."parent_id" AS t0_r3, "term_taxonomy"."count" AS t0_r4, "term_taxonomy"."name" AS t0_r5, "term_taxonomy"."slug" AS t0_r6, "term_taxonomy"."term_group" AS t0_r7, "term_taxonomy"."term_order" AS t0_r8, "term_taxonomy"."status" AS t0_r9, "term_taxonomy"."created_at" AS t0_r10, "term_taxonomy"."updated_at" AS t0_r11, "term_taxonomy"."user_id" AS t0_r12, "metas"."id" AS t1_r0, "metas"."key" AS t1_r1, "metas"."value" AS t1_r2, "metas"."objectId" AS t1_r3, "metas"."object_class" AS t1_r4 FROM "term_taxonomy" LEFT OUTER JOIN "metas" ON "metas"."objectId" = "term_taxonomy"."id" AND "metas"."object_class" = ? WHERE "term_taxonomy"."taxonomy" = 'site'  ORDER BY "term_taxonomy"."term_group" DESC[0m  [["object_class", "Site"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "term_taxonomy".* FROM "term_taxonomy" WHERE "term_taxonomy"."taxonomy" = 'site'  ORDER BY "term_taxonomy"."term_group" DESC LIMIT 1
+  Rendered layouts/admin/_flash_messages.html.erb (4.9ms)
+Completed 200 OK in 5759ms (Views: 5184.6ms | ActiveRecord: 31.2ms)
+
+
+Started GET "/assets/admin/admin-manifest.css?body=1" for 127.0.0.1 at 2015-07-21 03:19:39 +0800
+
+
+Started GET "/assets/admin/jquery/jquery-ui.css?body=1" for 127.0.0.1 at 2015-07-21 03:19:40 +0800
+
+
+Started GET "/assets/admin/bootstrap/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-07-21 03:19:42 +0800
+
+
+Started GET "/assets/admin/animate/animate.min.css?body=1" for 127.0.0.1 at 2015-07-21 03:19:43 +0800
+
+
+Started GET "/assets/admin/theme-default.css?body=1" for 127.0.0.1 at 2015-07-21 03:19:44 +0800
+
+
+Started GET "/assets/admin/elfinder/elfinder.css?body=1" for 127.0.0.1 at 2015-07-21 03:19:45 +0800
+
+
+Started GET "/assets/admin/elfinder/elfinder-theme.css?body=1" for 127.0.0.1 at 2015-07-21 03:19:46 +0800
+
+
+Started GET "/assets/admin/core.css?body=1" for 127.0.0.1 at 2015-07-21 03:19:47 +0800
+
+
+Started GET "/assets/admin/bootstrap/bootstrap-datetimepicker.css?body=1" for 127.0.0.1 at 2015-07-21 03:19:48 +0800
+
+
+Started GET "/assets/admin/tageditor/jquery.tag-editor.css?body=1" for 127.0.0.1 at 2015-07-21 03:19:49 +0800
+
+
+Started GET "/assets/plugins/ecommerce/assets/css/admin.css" for 127.0.0.1 at 2015-07-21 03:19:50 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-21 03:19:51 +0800
+
+
+Started GET "/assets/admin/data.js?body=1" for 127.0.0.1 at 2015-07-21 03:19:52 +0800
+
+
+Started GET "/assets/admin/bootstrap.min.js?body=1" for 127.0.0.1 at 2015-07-21 03:19:53 +0800
+
+
+Started GET "/assets/admin/jquery-ui.min.js?body=1" for 127.0.0.1 at 2015-07-21 03:19:54 +0800
+
+
+Started GET "/assets/admin/underscore.js?body=1" for 127.0.0.1 at 2015-07-21 03:19:55 +0800
+
+
+Started GET "/assets/admin/jquery.validate.js?body=1" for 127.0.0.1 at 2015-07-21 03:19:56 +0800
+
+
+Started GET "/assets/admin/actions.js?body=1" for 127.0.0.1 at 2015-07-21 03:19:57 +0800
+
+
+Started GET "/assets/admin/elfinder/elfinder.full.js?body=1" for 127.0.0.1 at 2015-07-21 03:19:58 +0800
+
+
+Started GET "/assets/admin/elfinder/proxy/elFinderSupportVer1.js?body=1" for 127.0.0.1 at 2015-07-21 03:20:00 +0800
+
+
+Started GET "/assets/admin/elfinder/upload_elfinder.js?body=1" for 127.0.0.1 at 2015-07-21 03:20:00 +0800
+
+
+Started GET "/assets/admin/jquery.slugify.js?body=1" for 127.0.0.1 at 2015-07-21 03:20:02 +0800
+
+
+Started GET "/assets/admin/translator.js?body=1" for 127.0.0.1 at 2015-07-21 03:20:03 +0800
+
+
+Started GET "/assets/admin/core.js?body=1" for 127.0.0.1 at 2015-07-21 03:20:04 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-21 03:20:05 +0800
+
+
+Started GET "/assets/admin/modal.js?body=1" for 127.0.0.1 at 2015-07-21 03:20:06 +0800
+
+
+Started GET "/assets/admin/tageditor/jquery.caret.min.js?body=1" for 127.0.0.1 at 2015-07-21 03:20:07 +0800
+
+
+Started GET "/assets/admin/tageditor/jquery.tag-editor.js?body=1" for 127.0.0.1 at 2015-07-21 03:20:08 +0800
+
+
+Started GET "/assets/admin/admin-manifest.js?body=1" for 127.0.0.1 at 2015-07-21 03:20:09 +0800
+
+
+Started GET "/assets/plugins/ecommerce/assets/js/admin.js" for 127.0.0.1 at 2015-07-21 03:20:10 +0800
+
+
+Started GET "/assets/admin/img/bg.png" for 127.0.0.1 at 2015-07-21 03:20:11 +0800
+
+
+Started GET "//assets/camaleon.png" for 127.0.0.1 at 2015-07-21 03:20:12 +0800
+
+
+Started GET "//assets/admin/img/no_image.jpg" for 127.0.0.1 at 2015-07-21 03:20:13 +0800
+
+
+Started GET "/assets/admin/fonts/OpenSans-Regular-webfont.woff" for 127.0.0.1 at 2015-07-21 03:20:14 +0800
