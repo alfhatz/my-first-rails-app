@@ -71,4 +71,4 @@ Copyright © 2015 Camaleon. All rights reserved.
 
 Register your issues here: https://github.com/owen2345/Camaleon-CMS/issues
 
-Visit web site: http://camaleon.tuzitio.com/
+Visit web site: http://camaleon.tuzitio.com/# my-first-rails-app 
